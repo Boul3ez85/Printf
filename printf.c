@@ -18,32 +18,34 @@ va_start(parameters, format);
 if (format == NULL)
 return (-1);
 
-if (format != NULL && format[i] != '\0')
+for (i = 0; format[i] != '\0' ; i++)
 {
-
-for (i = 0; format[i] != '\0' && format[i] != '%'; i++)
-{
-_putchar(format[i]);
-check++;
+if (format[i] == '%')
+i++;
 }
 if (!format[i])
-return (check);
-
-if (format[i] == '%')
 {
+return (-1);
+
+for (; format[i] == ' '; i++)
+;
+
 x = get_struct(format[i + 1]);
-if (x != NULL)
+if (x == NULL)
 {
 check += x(parameters);
-i += 2;
 }
 else
 {
-_putchar(format[i + 1]);
+_putchar('%');
+_putchar(format[i]);
+check += 2;
+}
+}
+else
+{
+_putchar(format[i]);
 check++;
-i++;
-}
-}
 }
 va_end(parameters);
 return (check);
