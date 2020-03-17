@@ -20,7 +20,7 @@ for (i = 0; format[i] != '\0' ; i++)
 if (format[i] == '%')
 i++;
 }
-if (!format[i])
+if (format[i] == '\0')
 {
 return (-1);
 for (; format[i] == ' '; i++)
@@ -28,14 +28,12 @@ for (; format[i] == ' '; i++)
 x = get_struct(format[i + 1]);
 if (x == NULL)
 {
-check += x(parameters);
-}
-else
-{
 _putchar('%');
 _putchar(format[i]);
 check += 2;
 }
+else
+check += x(parameters);
 }
 else
 {
