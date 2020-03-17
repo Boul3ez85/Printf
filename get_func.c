@@ -20,7 +20,7 @@ format_t structs_pr[] = {
 
 int x = 0;
 
-while (structs_pr[x].f)
+while (structs_pr[x].spc)
 {
 if (a == *structs_pr[x].spc)
 {
