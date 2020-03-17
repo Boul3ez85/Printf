@@ -46,4 +46,5 @@ _printf("%s, %s %d, %d\\n", weekday, month, day, year);
 .SH BUGS
 No known bugs.
 .SH AUTHOR
+
 Moez Ben Rebah [https://github.com/Boul3ez85], Mokhtar Touiri [https://github.com/MokhtarTouiri]
