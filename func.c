@@ -62,40 +62,35 @@ return (1);
 
 int print_integer(va_list parameters)
 {
-int n;
-n = va_arg(parameters, int);
+int x[10];
+int f, d, t, y, i;
 
-if (n < 0)
+t = va_arg(parameters, int);
+i = 0;
+d = 1000000000;
+x[0] = t / d;
+for (f = 1; f < 10; f++)
+{
+d /= 10;
+x[f] = (t / d) % 10;
+}
+if (t < 0)
 {
 _putchar('-');
-n = -n;
+i++;
+for (f = 0; f < 10; f++)
+x[f] *= -1;
 }
-
-if (n >= 1000)
+for (f = 0, y = 0; f < 10; f++)
 {
-_putchar((n / 1000) + '0');
-_putchar(((n % 1000) / 100) + '0');
-_putchar(((n % 100) / 10) + '0');
-_putchar((n % 10) + '0');
-}
-
-if ((n >= 100) && (n < 1000))
+y += x[f];
+if (y != 0 || f == 9)
 {
-_putchar((n / 100) + '0');
-_putchar(((n % 100) / 10) + '0');
-_putchar((n % 10) + '0');
+_putchar('0' + x[f]);
+i++;
 }
-
-if ((n >= 10) && (n < 100))
-{
-_putchar((n / 10) + '0');
-_putchar((n % 10) + '0');
 }
-if (n < 9 && n >= 0)
-{
-_putchar(n % 10 + '0');
-}
-return (n);
+return (i);
 }
 
 /**
@@ -107,38 +102,33 @@ return (n);
 
 int print_decimal(va_list parameters)
 {
-int n;
-n = va_arg(parameters, int);
+int x[10];
+int f, d, t, y, i;
 
-if (n < 0)
+t = va_arg(parameters, int);
+i = 0;
+d = 1000000000;
+x[0] = t / d;
+for (f = 1; f < 10; f++)
+{
+d /= 10;
+x[f] = (t / d) % 10;
+}
+if (t < 0)
 {
 _putchar('-');
-n = -n;
+i++;
+for (f = 0; f < 10; f++)
+x[f] *= -1;
 }
-
-if (n >= 1000)
+for (f = 0, y = 0; f < 10; f++)
 {
-_putchar((n / 1000) + '0');
-_putchar(((n % 1000) / 100) + '0');
-_putchar(((n % 100) / 10) + '0');
-_putchar((n % 10) + '0');
-}
-
-if ((n >= 100) && (n < 1000))
+y += x[f];
+if (y != 0 || f == 9)
 {
-_putchar((n / 100) + '0');
-_putchar(((n % 100) / 10) + '0');
-_putchar((n % 10) + '0');
+_putchar('0' + x[f]);
+i++;
 }
-
-if ((n >= 10) && (n < 100))
-{
-_putchar((n / 10) + '0');
-_putchar((n % 10) + '0');
 }
-if (n < 9 && n >= 0)
-{
-_putchar(n % 10 + '0');
-}
-return (n);
+return (i);
 }

@@ -1,12 +1,10 @@
 #include "holberton.h"
-
 /**
  *_printf - function to print anything
  *@format: types of argument passed to the function
  *
  *Return: number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
 int i = 0;
@@ -17,33 +15,30 @@ va_start(parameters, format);
 
 if (format == NULL)
 return (-1);
-
-if (format != NULL && format[i] != '\0')
+for (i = 0; format[i] != '\0' ; i++)
 {
-
-for (i = 0; format[i] != '\0' && format[i] != '%'; i++)
-{
-_putchar(format[i]);
-check++;
-}
-if (!format[i])
-return (check);
-
 if (format[i] == '%')
+i++;
+}
+if (format[i] == '\0')
 {
+return (-1);
+for (; format[i] == ' '; i++)
+;
 x = get_struct(format[i + 1]);
-if (x != NULL)
+if (x == NULL)
 {
+_putchar('%');
+_putchar(format[i]);
+check += 2;
+}
+else
 check += x(parameters);
-i += 2;
 }
 else
 {
-_putchar(format[i + 1]);
+_putchar(format[i]);
 check++;
-i++;
-}
-}
 }
 va_end(parameters);
 return (check);
