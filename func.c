@@ -51,3 +51,94 @@ char c = '%';
 _putchar(c);
 return (1);
 }
+
+
+/**
+ * print_integer - prints an integer
+ * @parameters: integer to print
+ *
+ * Return: number of chars and digits printed
+ */
+
+int print_integer(va_list parameters)
+{
+int n;
+n = va_arg(parameters, int);
+
+if (n < 0)
+{
+_putchar('-');
+n = -n;
+}
+
+if (n >= 1000)
+{
+_putchar((n / 1000) + '0');
+_putchar(((n % 1000) / 100) + '0');
+_putchar(((n % 100) / 10) + '0');
+_putchar((n % 10) + '0');
+}
+
+if ((n >= 100) && (n < 1000))
+{
+_putchar((n / 100) + '0');
+_putchar(((n % 100) / 10) + '0');
+_putchar((n % 10) + '0');
+}
+
+if ((n >= 10) && (n < 100))
+{
+_putchar((n / 10) + '0');
+_putchar((n % 10) + '0');
+}
+if (n < 9 && n >= 0)
+{
+_putchar(n % 10 + '0');
+}
+return (n);
+}
+
+/**
+ *print_decimal - print a decimal
+ *@parameters: decimal to print
+ *
+ *Return: number of characters and digits printed
+ */
+
+int print_decimal(va_list parameters)
+{
+int n;
+n = va_arg(parameters, int);
+
+if (n < 0)
+{
+_putchar('-');
+n = -n;
+}
+
+if (n >= 1000)
+{
+_putchar((n / 1000) + '0');
+_putchar(((n % 1000) / 100) + '0');
+_putchar(((n % 100) / 10) + '0');
+_putchar((n % 10) + '0');
+}
+
+if ((n >= 100) && (n < 1000))
+{
+_putchar((n / 100) + '0');
+_putchar(((n % 100) / 10) + '0');
+_putchar((n % 10) + '0');
+}
+
+if ((n >= 10) && (n < 100))
+{
+_putchar((n / 10) + '0');
+_putchar((n % 10) + '0');
+}
+if (n < 9 && n >= 0)
+{
+_putchar(n % 10 + '0');
+}
+return (n);
+}

@@ -13,6 +13,8 @@ format_t structs_pr[] = {
 {"c", print_c},
 {"s", print_s},
 {"%", print_percent},
+{"i", print_integer},
+{"d", print_decimal},
 {NULL, NULL}
 };
 

@@ -13,13 +13,15 @@ int i = 0;
 int (*x)(va_list);
 int check = 0;
 va_list parameters;
-
 va_start(parameters, format);
+
+if (format == NULL)
+return (-1);
 
 if (format != NULL && format[i] != '\0')
 {
 
-for (i = 0; format[i] && format[i] != '%'; i++)
+for (i = 0; format[i] != '\0' && format[i] != '%'; i++)
 {
 _putchar(format[i]);
 check++;
@@ -42,8 +44,6 @@ check++;
 i++;
 }
 }
-if (format == NULL)
-return (check);
 }
 va_end(parameters);
 return (check);
