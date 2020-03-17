@@ -5,19 +5,26 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-int _putchar(char c);
+/**
+ *struct format - structure for printing various types
+ *@spc: type to print
+ *@f: function to print
+ */
+
 typedef struct format
 {
 char *spc;
 int (*f)(va_list);
-}format_t;
+} format_t;
+
+int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list parameters);
 int print_s(va_list parameters);
 int print_percent(__attribute__((unused))va_list parameters);
 int print_i(va_list parameters);
 int print_d(va_list parameters);
-int (*get_struct(const char *a))(va_list);
+int (*get_struct(const char a))(va_list);
 
 
 #endif
