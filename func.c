@@ -5,15 +5,14 @@
  *print_c - function to print character
  *@parameters: characters to print
  *
- *Return: always 1
+ *Return: number of character or -1
  */
 
 int print_c(va_list parameters)
 {
-char c = va_arg(parameters, int);
-
-_putchar(c);
-return (1);
+int c = va_arg(parameters, int);
+int i = _putchar(c);
+return (i);
 }
 
 /**
@@ -28,17 +27,12 @@ int print_s(va_list parameters)
 int i = 0;
 char *l = va_arg(parameters, char *);
 
-if (l == NULL)
-l = "(null)";
-
-while (l[i])
+while (*l)
 {
-_putchar(l[i]);
-i++;
+i += _putchar(*l);
 }
 return (i);
 }
-
 
 /**
  *print_percent - function to print %
