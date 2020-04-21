@@ -1,32 +1,31 @@
 #include "holberton.h"
 
 /**
- *get_struct - structure
- *@a: character
+ *get_func - function to find a function pointer associated with specifier
+ *@a: specifier to find the correct function
  *
- *Return: null
+ *Return: function pointer
  */
 
-int (*get_struct(const char a))(va_list)
+int (*get_func(const char a))(va_list)
 {
+unsigned int m = 0;
+
 format_t structs_pr[] = {
-{"c", print_c},
-{"s", print_s},
-{"%", print_percent},
-{"i", print_integer},
-{"d", print_decimal},
-{NULL, NULL}
+{'c', print_c},
+{'s', print_s},
+{'%', print_percent},
+{'i', print_integer},
+{'d', print_decimal},
+{'\0', NULL}
 };
 
-int x = 0;
 
-while (structs_pr[x].spc)
+for (; structs_pr[m].spc; m++)
 {
-if (a == *structs_pr[x].spc)
-{
-return (structs_pr[x].f);
+if (a == structs_pr[m].spc)
+return (structs_pr[m].f);
 }
-x++;
-}
+
 return (NULL);
 }

@@ -10,7 +10,9 @@
 
 int print_c(va_list parameters)
 {
-_putchar(va_arg(parameters, int));
+char c = va_arg(parameters, int);
+
+_putchar(c);
 return (1);
 }
 

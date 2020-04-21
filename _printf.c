@@ -7,38 +7,33 @@
  */
 int _printf(const char *format, ...)
 {
-int i = 0;
-int (*x)(va_list);
 int check = 0;
 va_list parameters;
-va_start(parameters, format);
+int (*func)(va_list);
 
-if (format == NULL)
-return (-1);
-for (i = 0; format[i] != '\0' ; i++)
+va_start(parameters, format);
+for (; *format; format++)
+if (*format == '%')
 {
-if (format[i] == '%')
-i++;
-}
-if (format[i] == '\0')
+if (!*(format + 1))
 {
 return (-1);
-for (; format[i] == ' '; i++)
-;
-x = get_struct(format[i + 1]);
-if (x == NULL)
-{
-_putchar('%');
-_putchar(format[i]);
-check += 2;
 }
-else
-check += x(parameters);
+else if (*(format + 1) == '%')
+{
+check += _putchar(*(format + 1));
+format++;
 }
 else
 {
-_putchar(format[i]);
-check++;
+func = get_func(*(format + 1));
+check = func(parameters);
+format++;
+}
+}
+else
+{
+check += _putchar(*format);
 }
 va_end(parameters);
 return (check);
