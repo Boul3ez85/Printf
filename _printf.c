@@ -12,8 +12,10 @@ va_list parameters;
 int (*func)(va_list);
 
 va_start(parameters, format);
-for (; *format; format++)
-if (*format == '%')
+if (format == NULL)
+return (-1);
+for (; *(format); format++)
+if (*(format) == '%')
 {
 if (!*(format + 1))
 {
@@ -21,7 +23,7 @@ return (-1);
 }
 if (*(format + 1) == '%')
 {
-  _putchar('%');
+_putchar('%');
 }
 else if (*(format + 1) != '%')
 {
@@ -37,7 +39,7 @@ format++;
 }
 else
 {
-check += _putchar(*format);
+check += _putchar(*(format));
 }
 va_end(parameters);
 return (check);
