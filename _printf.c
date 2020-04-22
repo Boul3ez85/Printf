@@ -7,39 +7,39 @@
  */
 int _printf(const char *format, ...)
 {
-int check = 0;
+int check = 0, i;
 va_list parameters;
 int (*func)(va_list);
 
 va_start(parameters, format);
 if (format == NULL)
 return (-1);
-for (; *(format); format++)
-if (*(format) == '%')
+for (i = 0; format[i]; i++)
 {
-if (!*(format + 1))
+if (format[i] == '%')
 {
+i++;
+if (!(format[i]))
 return (-1);
-}
-if (*(format + 1) == '%')
+while (format[i] == ' ')
+{
+i++;
+func = get_func(format[i]);
+if (func == NULL)
 {
 _putchar('%');
-}
-else if (*(format + 1) != '%')
-{
-check += _putchar(*(format + 1));
-format++;
+_putchar(format[i]);
+check += 2;
 }
 else
-{
-func = get_func(*(format + 1));
-check = func(parameters);
-format++;
+check += func(parameters);
 }
 }
 else
 {
-check += _putchar(*(format));
+_putchar(format[i]);
+check++;
+}
 }
 va_end(parameters);
 return (check);
