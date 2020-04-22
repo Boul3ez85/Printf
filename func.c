@@ -10,9 +10,9 @@
 
 int print_c(va_list parameters)
 {
-int c = va_arg(parameters, int);
-int i = _putchar(c);
-return (i);
+char character = va_arg(parameters, int);
+
+return (_putchar(character));
 }
 
 /**
@@ -24,14 +24,14 @@ return (i);
 
 int print_s(va_list parameters)
 {
-int i = 0;
-char *l = va_arg(parameters, char *);
+int count;
+char *str = va_arg(parameters, char *);
 
-while (*l)
-{
-i += _putchar(*l);
-}
-return (i);
+if (str == NULL)
+str = "(null)";
+for (count = 0; str[count] != '\0'; count++)
+_putchar(str[count]);
+return (count);
 }
 
 /**
