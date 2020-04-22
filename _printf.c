@@ -19,11 +19,11 @@ if (!*(format + 1))
 {
 return (-1);
 }
-if (*(format + 1) != '%')
+if (*(format + 1) == '%')
 {
-return (-1);
+  _putchar('%');
 }
-else if (*(format + 1) == '%')
+else if (*(format + 1) != '%')
 {
 check += _putchar(*(format + 1));
 format++;
