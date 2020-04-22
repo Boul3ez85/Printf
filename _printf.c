@@ -22,7 +22,6 @@ i++;
 if (!(format[i]))
 return (-1);
 while (format[i] == ' ')
-{
 i++;
 func = get_func(format[i]);
 if (func == NULL)
@@ -33,7 +32,6 @@ check += 2;
 }
 else
 check += func(parameters);
-}
 }
 else
 {
