@@ -19,7 +19,7 @@ if (!*(format + 1))
 {
 return (-1);
 }
-else if (*(format + 1) == '%')
+else if (*(format + 1) != '%')
 {
 check += _putchar(*(format + 1));
 format++;

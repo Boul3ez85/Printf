@@ -3,6 +3,7 @@
 
 /* Importing Libraries */
 
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -33,5 +34,7 @@ int print_d(va_list parameters);
 int (*get_func(const char a))(va_list);
 int print_integer(va_list parameters);
 int print_decimal(va_list parameters);
+int main(void);
+
 
 #endif /* _PRINTF_H_ */

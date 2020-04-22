@@ -1,0 +1,10 @@
+#include "holberton.h"
+
+int main(void)
+{
+  int i = 0;
+  i = printf("%s\n", "hello!");
+  printf("i: %d\n", i);
+
+  return (0);
+}
