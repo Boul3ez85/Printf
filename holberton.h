@@ -1,6 +1,8 @@
 #ifndef _PRINTF_H_
 #define _PRINTF_H_
 
+#define BUFSIZE MAXLENGTH
+
 /* Importing Libraries */
 
 #include <stdio.h>
@@ -34,7 +36,7 @@ int print_d(va_list parameters);
 int (*get_func(const char a))(va_list);
 int print_integer(va_list parameters);
 int print_decimal(va_list parameters);
-int main(void);
-
+int binary_recursive(unsigned int num, int len);
+int print_binary(va_list parameters);
 
 #endif /* _PRINTF_H_ */

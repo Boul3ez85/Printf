@@ -17,6 +17,7 @@ format_t structs_pr[] = {
 {'%', print_percent},
 {'i', print_integer},
 {'d', print_decimal},
+{'b', print_binary},
 {'\0', NULL}
 };
 
