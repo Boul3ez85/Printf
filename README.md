@@ -49,33 +49,8 @@ Here are the general requirements:
     You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf.
 
 
-### 4- main to test
-
-
-#include <limits.h>
-#include <stdio.h>
-#include "holberton.h"
-
-/**
-* main - Entry point
-*
-* Return: Always 0
-*/
-
-int main(void)
-{
-int len;
-int len2;
-unsigned int ui;
-vois *addr;
-
-len = _printf("let's try to printf a simple sentence.\n");
-len2 = printf("let's try to printf a simple sentence.\n");
-ui = (unsigned int)INT_MAX + 1024;
-addr = (void *)0x7ffe637541f0;
-
-
 ### 5-Authors
+
 
 Moez Ben Rebah: https://github.com/Boul3ez85
 
