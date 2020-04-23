@@ -19,6 +19,8 @@ format_t structs_pr[] = {
 {'d', print_decimal},
 {'b', print_binary},
 {'u', print_unint},
+{'o', print_octal},
+
 
 {'\0', NULL}
 };
