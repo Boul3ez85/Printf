@@ -38,5 +38,7 @@ int print_integer(va_list parameters);
 int print_decimal(va_list parameters);
 int binary_recursive(unsigned int num, int len);
 int print_binary(va_list parameters);
+int print_unint(va_list parameters);
+
 
 #endif /* _PRINTF_H_ */

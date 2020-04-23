@@ -18,6 +18,8 @@ format_t structs_pr[] = {
 {'i', print_integer},
 {'d', print_decimal},
 {'b', print_binary},
+{'u', print_unint},
+
 {'\0', NULL}
 };
 
