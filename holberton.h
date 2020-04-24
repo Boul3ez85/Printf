@@ -40,6 +40,7 @@ int binary_recursive(unsigned int num, int len);
 int print_binary(va_list parameters);
 int print_unint(va_list parameters);
 int print_octal(va_list args);
+int rot_13(va_list parameters);
 
 
 #endif /* _PRINTF_H_ */

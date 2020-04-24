@@ -20,8 +20,7 @@ format_t structs_pr[] = {
 {'b', print_binary},
 {'u', print_unint},
 {'o', print_octal},
-
-
+{'R', rot_13},
 {'\0', NULL}
 };
 
