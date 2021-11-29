@@ -1,16 +1,8 @@
 # printf project
 
-## Summary
+<hr>
 
 <br>
-
-#### 1- General Requirements
-#### 2- Authorized functions and macros
-#### 3- Compilation
-#### 4- main to test
-#### 5- Authors
-
-<br><br><br>
 
 #### 1- General Requirements
 
