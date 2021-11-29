@@ -4,8 +4,6 @@
 
 #### 1- General Requirements
 
-<br>
-
 ##### Here are the general requirements:
 
 - Allowed editors: vi, vim, emacs
