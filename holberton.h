@@ -20,8 +20,8 @@
 
 typedef struct format
 {
-const char spc;
-int (*f)(va_list);
+        const char spc;
+        int (*f)(va_list);
 } format_t;
 
 /* Function Prototypes */
