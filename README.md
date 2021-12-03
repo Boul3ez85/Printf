@@ -57,16 +57,18 @@ int _printf(char format, ...) {...}
 ```
 
 - The main function of the printf function project:
+
+> _printf.c
 <br>
-_printf.c
 
 - The header file that connects all of the files in the project and allows functions and structures to work with each other through prototype statements:
+
+> holberton.h
 <br>
-holberton.h
 
 - the manual page of the project:
-<br>
-man_3_printf
+
+> man_3_printf
 
 <br>
 
@@ -99,7 +101,13 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 
 <br>
 
-### Built with:
+### 9- Output:
+
+![](https://i.imgur.com/ryTPmQO.png)
+
+<br>
+
+### 8- Built with:
 
 Ubuntu 18.06 LTS
 
